@@ -1,20 +1,23 @@
 import {
-  Login,
-  Register,
-  Home
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
+
+import {
+  Cars
 } from './pages'
-import { Switch, Route } from "react-router-dom";
 
 function App() {
-  return(
-    <>
+  return (
+    <Router>
       <Switch>
-        <Route component={Home} path="/" exact/>
-        <Route component={Login} path="/login" />
-        <Route component={Register} path="/register" />
+        <Route path='/cars'>
+          <Cars />
+        </Route>
       </Switch>
-    </>
-  )
+    </Router>
+  );
 }
 
 export default App;
